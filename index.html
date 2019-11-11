@@ -4,9 +4,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet"> 
         <title>Final assignment JavaScript</title>
     </head>
-    <body>
+    <body id="body">
+        <h1 class="heading"> flickr </h1>
+        <figure id="figure" class="figure_main_page_box">
+                <h1 id="figure_title" class="hide"> Flickr </h1>
+                <input type="text" id="entered" value="Search... ">
+                <input type="number" max="500" id="user_preference" value="Pictures to show...">
+        </figure>
+        <div id="overlay" class="dim"></div>
+
+        <section id="lightbox" class="hide">
+            <img id="lightbox_img" class="hide" src="">
+        </section>
+        <div class="hide" id="gallery">
+
+        </div>
         <script src="js/index.js"></script>
     </body>
 </html>

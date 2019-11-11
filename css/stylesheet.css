@@ -1,0 +1,251 @@
+body {
+    background-size: cover;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: ow;
+}
+
+.heading {
+    margin: 0;
+    font-size: 100px;
+    width: 300px;
+    align-self: center;
+    background:rgba(255, 166, 0, 0.781); ;
+}
+
+    
+
+.gallery {
+    padding: 0;
+    margin: 0;
+    height: 92vh;
+    width: 100vw;
+    z-index: 2;
+    width: 100%;
+    /*height: 0;*/
+    display: grid;
+    grid-template-columns: repeat(5 ,1fr);
+    grid-auto-rows: auto;
+    column-gap: 0px;
+    line-height: 0;
+
+    -webkit-column-count: 5;
+    -webkit-column-gap:   0px;
+    -moz-column-count:    5;
+    -moz-column-gap:      0px;
+    column-count:         5;
+    column-gap:           0px;  
+}
+
+.body_gallery_page {
+    background: rgba(255, 166, 0, 0.781);
+}
+.dim {
+    position: fixed; 
+    display: none; 
+    width: 100%; 
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.900); 
+    z-index: 3;
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.dim_show {
+    display: block;
+}
+
+.figure_main_page_box {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 166, 0, 0.781);
+    align-self: center;
+    width: 300px;
+}
+
+#figure_title {
+    margin: 0;
+    align-self: center;
+}
+
+.figure_gallery_page_box {
+    display: flex;
+    /*position: fixed;*/
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+    width: 100%;
+    height: 8vh;
+    align-self: flex-start;
+    flex-direction: row;
+    z-index: 4;
+}
+
+/*figure:hover {
+    transform: scale(1.05);
+    -ms-transform: translate(3em,0);
+} */
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: 'Staatliches';
+}
+
+#figure_title:hover {
+    cursor: pointer;
+}
+
+input {
+    background: rgba(255, 255, 255, 0);
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid white;
+    border-left: 0px;
+    height: 50px;
+    width: 100%;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    align-self: center;
+    outline: none;
+}
+
+.input_gallery_page {
+    align-self: flex-end;
+    height: 100%;
+    width: 50%;
+}
+
+.input_gallery_quantity {
+    width: 10%;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+.img_box {
+    display: flex;
+   /* object-fit: contain;
+  */margin: 0; /*
+    padding: 0;
+    width: 0px;
+    height: auto; */
+}
+
+.image_props {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.lightbox {
+    height: 70vh;
+    /* width: 70vw; */
+    z-index: 3;
+    position: fixed;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    border: solid white 20px;
+}
+
+.lightbox_image {
+    display: block;
+    height: 100%;
+    align-self: center;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5 ,1fr);
+    grid-auto-rows: auto;
+    column-gap: 0px;
+    line-height: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number]::-moz-inner-spin-button, 
+input[type=number]::-moz-outer-spin-button { 
+  -moz-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { 
+    -moz-appearance: textfield; 
+    margin: 0; 
+  }
+
+@media only screen and (max-width: 500px) {
+    .lightbox {
+        height: auto;
+        width: 70vw;
+    }
+
+    .h1 {
+        display: none;
+    }
+
+    .input_gallery_quantity {
+        width: 30%;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+}
+
+    .lightbox {
+        height: 70vh;
+        width: auto;
+        justify-self: none;
+    }
+
+    .lightbox_image {
+        display: block;
+        /* height: 100%; */
+        width: auto;
+        align-self: center;
+    }
+
+    @media only screen and (max-width: 500px) {
+        
+        .lightbox {
+            height: auto;
+            width: 70vw;
+        }
+
+        .lightbox_image {
+            display: block;
+            height: 100%;
+            width: 100%;
+            align-self: center;
+        }
+
+    }
+}
