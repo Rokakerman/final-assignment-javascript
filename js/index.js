@@ -12,6 +12,28 @@ function refresh() {
     background.style.backgroundImage = "url(" + dir + randomNr + jpeg + ")";
 }
 
+document.getElementById("test").addEventListener("mouseenter", function dropdown() {
+    document.getElementById("list").classList.add("ul");
+    document.getElementById("test").addEventListener("mouseleave", dropup);
+    let list = document.querySelectorAll("li"); //.addEventListener("click", listSelection);
+    for (i = 0; i < list.length; i++) {
+        list[i].addEventListener("click", listSelection);
+    }
+})
+
+function listSelection(event) {
+    console.log(event);
+    let x = event.target.innerHTML;
+    console.log(x);
+    event.target.classList.add("border");
+    
+}
+
+
+function dropup() {
+    document.getElementById("list").classList.remove("ul");
+}
+
 document.getElementById("entered").addEventListener("keyup", function(event) {
     // Kör images funktionen när man klickar på 'Enter'
     if (event.keyCode === 13) {
@@ -44,16 +66,11 @@ let getPictures = async () => {
     const FILTER ="text=";
     let searchWord = document.getElementById("entered").value;
     let searchAmount = document.getElementById("user_preference").value;
-    let maxPreceded = false;
-    if (searchAmount > 500) {
-        let replace = document.getElementById("user_preference").value;
-        replace = 500;
-        searchAmount = replace;
-        maxPreceded = true;
-    }
-
     let perPage = "per_page=" + searchAmount;
     const JASON ="&page=1&format=json&nojsoncallback=1";
+    // let maxPreceded = false;
+    let maxPreceded = checkAmount(searchAmount);
+    console.log('Hello', maxPreceded)
 
     if (maxPreceded == false) {    
         assignClasses();
@@ -65,6 +82,22 @@ let getPictures = async () => {
     } else {
         alert("You can only choose to display a maximum of 500 pictures!")
     }
+}
+
+/* en funktion som kollar om användaren vill söka på mer an 500 bilder */
+
+function checkAmount(searchAmount) {
+    console.log("hej");
+    if (searchAmount > 500) {
+        // let replace = document.getElementById("user_preference").value;
+        replace = 500;
+        document.getElementById("user_preference").value = replace;
+        searchAmount = replace;
+        maxPreceded = true;
+        console.log('Tjo', maxPreceded);
+        return true
+    }
+    else {return false}
 }
 
 function assignClasses() {
