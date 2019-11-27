@@ -8,13 +8,14 @@
         <title>Final assignment JavaScript</title>
     </head>
     <body id="body">
-        <h1 class="heading"> flickr </h1>
+        <h1 id="main_title" class="heading"> flickr </h1>
         <figure id="figure" class="figure_main_page_box">
                 <h1 id="figure_title" class="hide"> Flickr </h1>
-                <input type="text" id="entered" value="Search... ">
-                <!-- <input type="number" max="500" id="user_preference" value="Pictures to show..."> -->
-                <div id="test">
-                    <ul id="list" class="hide">
+                <input type="text" id="entered" placeholder="Search... ">
+                <input type="number" max="500" id="user_preference">
+                <div id="mobile_pages" class="input_gallery_page"></div>
+                <div id="test" class="hide"> 
+                    <ul id="list" class="ul" title="Pictures to show...">
                         <li id="list_item"> 10 </li>
                         <li id="list_item"> 20 </li>
                         <li id="list_item"> 30 </li>
@@ -23,6 +24,20 @@
                     </ul>
                 </div>
        
+        </figure>
+
+        <figure id="figure" class="hide">
+            <input type="text" id="entered" placeholder="Search... ">
+            <div id="mobile_pages" class="input_gallery_page"></div>
+                <div id="test" class="hide"> 
+                    <ul id="list" class="ul" title="Pictures to show...">
+                        <li id="list_item"> 10 </li>
+                        <li id="list_item"> 20 </li>
+                        <li id="list_item"> 30 </li>
+                        <li id="list_item"> 40 </li>
+                        <li id="list_item"> 50 </li>
+                    </ul>
+                </div>
         </figure>
         <div id="overlay" class="dim"></div>
 

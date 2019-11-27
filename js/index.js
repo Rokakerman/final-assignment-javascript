@@ -4,6 +4,10 @@ function reload() {
 
 refresh();
 
+function hide() {
+    document.getElementById("main_title").classList.remove("heading");
+}
+
 function refresh() {
     let background = document.getElementById("body");
     let dir = "images/bg";
@@ -13,8 +17,8 @@ function refresh() {
 }
 
 document.getElementById("test").addEventListener("mouseenter", function dropdown() {
-    document.getElementById("list").classList.add("ul");
-    document.getElementById("test").addEventListener("mouseleave", dropup);
+    // document.getElementById("list").classList.add("ul");
+    // document.getElementById("test").addEventListener("mouseleave", dropup);
     let list = document.querySelectorAll("li"); //.addEventListener("click", listSelection);
     for (i = 0; i < list.length; i++) {
         list[i].addEventListener("click", listSelection);
@@ -23,12 +27,13 @@ document.getElementById("test").addEventListener("mouseenter", function dropdown
 
 function listSelection(event) {
     console.log(event);
-    let x = event.target.innerHTML;
-    console.log(x);
+    let selector = event.target.innerHTML;
+    console.log(selector);
     event.target.classList.add("border");
-    
+    document.getElementById("user_preference").innerHTML = selector;
+    searchAmount.innerHTML = selector;
+    // DU VAR HÄR <---------------------------------------
 }
-
 
 function dropup() {
     document.getElementById("list").classList.remove("ul");
@@ -113,6 +118,9 @@ function assignClasses() {
     document.getElementById("body").classList.add("body_gallery_page");
     document.getElementById("figure_title").classList.add("h1");
     document.getElementById("figure_title").addEventListener("click", reload);
+
+    document.getElementById("main_title").classList.remove("heading");
+    document.getElementById("figure").classList.add("hide");
 }
 
 let creatPicture = async (photo) => {
